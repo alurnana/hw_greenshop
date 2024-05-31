@@ -23,18 +23,7 @@ li {
     width: 1200px;
 }
 
-.clearfix::after {
-    content: "";
-    display: block;
-    clear: both;
-}
-
-.hide {
-    display: none !important;
-}
-
 /*--------------------------------HEADER------------------------------------*/
-
 .header {
     border-bottom: 0.3px solid rgba(70, 163, 88, 0.5) ;
     display: flex;
@@ -94,7 +83,6 @@ li {
 }
 
 /*--------------------------------FINISHED HEADER------------------------------------*/
-
 .content-block {
     background-color: rgba(245, 245, 245, 0.5);
 }
@@ -157,7 +145,6 @@ li {
 }
 
 /*--------------------------------SIDEBAR------------------------------------*/
-
 .flexwrap {
     display: flex;
 }
@@ -211,10 +198,9 @@ li {
     color: rgba(61, 61, 61, 1);
 }
 
-
-.nav-plants li {
-    display: inline;
-    margin-right: 20px;
+.nav-plants ul {
+    display: flex;
+    gap: 40px;
 }
 
 .nav-plants a:hover {
@@ -222,10 +208,6 @@ li {
     font-weight: 700;
     padding-bottom: 7px;
     border-bottom: 2px solid rgba(70, 163, 88, 1);
-}
-
-.nav-plants li:last-child {
-    margin-right: 0;
 }
 
 .nav-sort {
