@@ -225,9 +225,52 @@ li {
 }
 
 .card {
+    position: relative;
     width: 258px;
     margin-right: 33px;
     margin-bottom: 70px;
+}
+
+.card::before {
+    content: "";
+    background-color: rgba(70, 163, 88, 1);
+    height: 1px;
+    position: absolute;
+    left: 0;
+    right: 0;
+    display: none;
+    z-index: 1;
+    transition: 5s;
+}
+
+.card:hover::before {
+    display: block;
+}
+
+.card-hover {
+    justify-content: center;
+    display: none;
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 7px;
+}
+
+.card-hover a {
+    width: 35px;
+    height: 35px;
+    padding: 7px;
+    background-color: rgba(255, 255, 255, 1);
+    margin-right: 10px;
+    border-radius: 4px;
+}
+
+.card-hover a:last-child {
+    margin-right: 0;
+}
+
+.card:hover .card-hover {
+    display: flex;
 }
 
 .card:nth-child(3n) {
@@ -235,13 +278,12 @@ li {
 }
 
 .card-wrapper {
-    display: flex;
-    justify-content: space-around;
+    position: relative;
     padding: 25px 5px;
     background-color: rgba(251, 251, 251, 1);
 }
 
-.card img {
+.card>img {
     width: 250px;
     height: 250px;
 }
@@ -264,17 +306,32 @@ li {
     font-weight: 700;
 }
 
+.card-info span {
+    color: rgba(203, 203, 203, 1);
+    text-decoration: line-through;
+    margin-left: 15px;
+    font-weight: 400;
+}
+
+.card-sale {
+    position: absolute;
+    left: 0;
+    top: 0;
+    padding: 7px 8px;
+    color: rgba(255, 255, 255, 1);
+    background-color: rgba(70, 163, 88, 1);
+    text-transform: uppercase;
+}
+
 /* --------------------------------PAGES------------------------------------ */
 .pages {
     display: flex;
     justify-content: flex-end;
 }
 
+
 .pages-block {
     margin-left: 10px;
-}
-
-.pages-block a {
     padding: 9px 13px;
     border: 1px solid rgba(229, 229, 229, 1);
     border-radius: 7px;
@@ -316,13 +373,13 @@ li {
 
 .find-text {
     padding-right: 30px;
+    padding: 35px 30px 45px 0;
     display: flex;
     flex-direction: column;
     align-items: flex-end;
 }
 
 .find-text h3 {
-    padding-top: 35px;
     width: 155px;
     font-weight: 900;
     text-transform: uppercase;
@@ -333,7 +390,7 @@ li {
 }
 
 .find-text p {
-    padding: 10px 0 25px;
+    margin: 10px 0 25px;
     font-size: 14px;
     line-height: 24px;
     color: rgba(114, 114, 114, 1);
@@ -341,7 +398,6 @@ li {
 }
 
 .find-text a {
-    margin-bottom: 45px;
     padding: 10px 25px;
     background-color: rgba(70, 163, 88, 1);
     border-radius: 6px;
@@ -378,7 +434,7 @@ li {
 }
 
 .blog-card-text {
-    margin: 10px 12px;
+    padding: 10px 12px;
 }
 
 .blog-card-info {
@@ -405,7 +461,7 @@ li {
 
 .blog-card-button {
     display: block;
-    padding: 10px 0;
+    margin-top: 10px;
     color: rgba(61, 61, 61, 1);
     font-size: 14px;
     font-weight: 500;
